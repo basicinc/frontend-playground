@@ -1,12 +1,15 @@
 import { forwardRef } from 'react';
 
+import styles from '@/components/ui/Button/index.module.css';
+
 type Props = {
   label: string;
+  onClick?: () => void;
 };
 
-export const Button = forwardRef<HTMLButtonElement, Props>(({ label }, ref) => {
+export const Button = forwardRef<HTMLButtonElement, Props>(({ label, onClick }, ref) => {
   return (
-    <button ref={ref} type='button'>
+    <button className={styles.buttonContainer} ref={ref} type='button' onClick={onClick}>
       {label}
     </button>
   );
