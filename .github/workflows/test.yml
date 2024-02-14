@@ -8,8 +8,7 @@ name: 'Test CI'
 on:
   - push
   - pull_request
-env:
-  # RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY_TEST }}
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -49,14 +48,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - format:
+      - name: format
         run: pnpm run format
 
-      - js-lint:
+      - name: js-lint
         run: pnpm run lint:js
 
-      - stylelint:
+      - name: stylelint
         run: pnpm run lint:css
 
-      - type-check:
+      - name: type-check
         run: pnpm run ts:test
