@@ -22,7 +22,3 @@
 pnpm install
 pnpm dev
 ```
-
-
-
-
