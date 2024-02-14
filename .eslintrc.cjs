@@ -12,8 +12,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'prettier',
+    'plugin:storybook/recommended',
   ],
-  ignorePatterns: ['dist'],
+  ignorePatterns: ['dist', 'src/stories/**'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', '@typescript-eslint', 'react', 'import', 'unused-imports'],
   rules: {

@@ -9,5 +9,5 @@ module.exports = {
     'unit-allowed-list': ['%', 'rem', 'ms'],
     'import-notation': 'string',
   },
-  ignoreFiles: ['src/styles/reset.css'],
+  ignoreFiles: ['src/styles/reset.css', 'src/stories/**'],
 };
