@@ -48,6 +48,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # MEMO: typed-css-modulesを使用している都合上必要
+      - name: build css types
+        run: pnpm run build:css
+
       - name: format
         run: pnpm run format
 
