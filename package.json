@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "run-z server, build:css:local",
+    "dev": "run-z server, build:css:watch",
     "server": "vite",
     "build:watch": "vite build --mode=development --watch",
     "build": "vite build --mode=production",
