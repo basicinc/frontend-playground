@@ -1,9 +1,14 @@
 :root {
   /* color */
-  --color-primary: #00bcd4;
-  --color-black: #000;
-  --color-gray: #9e9e9e;
-  --color-white: #fff;
+  --color-main: #00bcd4;
+  --color-sub: #4f6f7b;
+  --color-dark: #121212;
+  --color-light: #fff;
+  --color-red: ##e92a2a;
+  --color-orange: #f3991c;
+  --color-green: #03a738;
+  --color-blue: #355cd9;
+  --color-yellow: #f6c000;
 
   /* font-size */
   --font-size-base: 1rem;
