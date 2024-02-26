@@ -1,0 +1,23 @@
+.svg-main {
+  path {
+    fill: var(--color-primary);
+  }
+}
+
+.svg-sub {
+  path {
+    fill: var(--color-sub);
+  }
+}
+
+.svg-dark {
+  path {
+    fill: var(--color-dark);
+  }
+}
+
+.svg-light {
+  path {
+    fill: var(--color-light);
+  }
+}
