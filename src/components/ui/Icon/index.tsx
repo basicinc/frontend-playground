@@ -1,21 +1,29 @@
 import SvgChevronRight from '@/components/ui/Icon/generated/ChevronRight';
 import SvgTrash from '@/components/ui/Icon/generated/Trash';
 import SvgUser from '@/components/ui/Icon/generated/User';
+import styles from '@/components/ui/Icon/index.module.css';
 
-import type { IconName } from '@/components/ui/Icon/type';
+import type { IconColorType, IconName } from '@/components/ui/Icon/type';
 import type { FC, SVGProps } from 'react';
 
 type Props = {
   name: IconName;
   size: number;
-  color?: string;
+  colorType?: IconColorType;
 };
 
-export const Icon: FC<Props> = ({ name, size, color = '#000' }) => {
+const COLOR_CLASSES: { [key in IconColorType]: string } = {
+  main: styles.svgMain,
+  sub: styles.svgSub,
+  dark: styles.svgDark,
+  light: styles.svgLight,
+} as const;
+
+export const Icon: FC<Props> = ({ name, size, colorType = 'dark' }) => {
   const iconProps: SVGProps<SVGSVGElement> = {
     width: size,
     height: size,
-    color,
+    className: COLOR_CLASSES[colorType],
   };
 
   switch (name) {

@@ -5,5 +5,5 @@ module.exports = {
   jsxRuntime: 'automatic',
   icon: true,
   // ignoreExisting: true,
-  replaceAttrValues: { '#000': '{props.color}' },
+  replaceAttrValues: { '#000': '' },
 };
