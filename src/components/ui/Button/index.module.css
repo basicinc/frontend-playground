@@ -1,17 +1,96 @@
+/* FIXME: use variable */
 .button-container {
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 16px 24px;
   font-size: var(--font-size-base);
-  color: var(--color-white);
+  color: var(--color-light);
   cursor: pointer;
-  background-color: var(--color-main);
-  border: none;
-  border-radius: 4px;
-  transition: background-color 300ms ease-in-out;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  transition: all 150ms ease-in-out; /* TODO: アニメーションを入れるか確認 */
 
-  &:hover {
-    background-color: var(--color-gray);
+  &:disabled {
+    color: var(--color-light) !important;
+    cursor: auto !important;
+    background-color: #a5a5a5 !important;
+    border-color: #a5a5a5 !important;
+
+    svg {
+      path {
+        fill: var(--color-light) !important;
+      }
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.primary {
+    color: var(--color-light);
+    background-color: var(--color-main);
+    border-color: var(--color-main);
+
+    svg {
+      path {
+        fill: var(--color-light);
+      }
+    }
+
+    &:hover {
+      background-color: #00abc1;
+      border-color: #00abc1;
+    }
+
+    &.focused {
+      background-color: #4dcfe1;
+      border-color: #4dcfe1;
+    }
+
+    &:active {
+      background-color: #0096a7;
+      border-color: #0096a7;
+    }
+  }
+
+  /* TODO: 以下も埋めていく */
+  &.primary-outlined {
+    color: var(--color-main);
+    background-color: var(--color-light);
+    border-color: var(--color-main);
+  }
+
+  &.secondary {
+    color: var(--color-light);
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+
+  &.secondary-outlined {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-color: #9d9d9d;
+  }
+
+  &.paid {
+    color: var(--color-light);
+    background-color: #f6c000;
+    border-color: #f6c000;
+  }
+
+  &.danger {
+    color: var(--color-light);
+    background-color: #e92a2a;
+    border-color: #e92a2a;
+  }
+
+  &.danger-outlined {
+    color: #f03a3a;
+    background-color: var(--color-light);
+    border-color: #f03a3a;
   }
 }
