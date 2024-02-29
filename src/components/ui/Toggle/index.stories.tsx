@@ -1,6 +1,5 @@
 import { Toggle } from '@/components/ui/Toggle';
 
-import type { Radio } from '@/components/ui/Radio';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -10,7 +9,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof Toggle>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
