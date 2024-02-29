@@ -1,14 +1,4 @@
 .toggle {
-  /* position: relative;
-  width: 56px;
-  height: 32px;
-  background-color: #ddd;
-  border-radius: 16px;
-
-  &:has(input:checked) {
-    background-color: var(--color-primary);
-  } */
-
   display: flex;
   gap: 8px;
   align-items: center;

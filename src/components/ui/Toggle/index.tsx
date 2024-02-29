@@ -16,7 +16,15 @@ export const Toggle = forwardRef<HTMLInputElement, Props>(({ label, name, checke
   return (
     <label className={styles.toggle}>
       <div className={styles.switch}>
-        <input ref={ref} type='checkbox' name={name} checked={checked} onChange={onChange} disabled={disabled} />
+        <input
+          ref={ref}
+          type='checkbox'
+          role='switch'
+          name={name}
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+        />
         <div className={styles.circle} />
         <div className={styles.base} />
       </div>
