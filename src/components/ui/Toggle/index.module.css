@@ -1,0 +1,66 @@
+.toggle {
+  /* position: relative;
+  width: 56px;
+  height: 32px;
+  background-color: #ddd;
+  border-radius: 16px;
+
+  &:has(input:checked) {
+    background-color: var(--color-primary);
+  } */
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+
+  > .switch {
+    position: relative;
+
+    &:has(input:focus) {
+      outline: auto;
+    }
+
+    &:has(input:focus:not(:focus-visible)) {
+      outline: 0; /* キーボード操作"以外"でフォーカスされた際はoutlineを消す */
+    }
+
+    > input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    > .base {
+      width: 56px;
+      height: 32px;
+      background-color: #c6c6c6;
+      border-radius: 16px;
+    }
+
+    > input:checked ~ .base {
+      background-color: var(--color-main);
+    }
+
+    > .circle {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      content: '';
+      background: #fff;
+      border-radius: 100%;
+      transition: all 300ms ease-in;
+    }
+
+    > input:checked ~ .circle {
+      transform: translateX(100%);
+    }
+  }
+
+  > .label {
+    color: var(--color-dark);
+  }
+}
