@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 
 import styles from '@/components/ui/Button/index.module.css';
@@ -30,7 +30,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ theme = 'primary', label, type, onClick, disabled, iconName, fullWidth }, ref) => {
     return (
       <button
-        className={classNames(styles.buttonContainer, THEME_CLASSES[theme], fullWidth ? styles.fullWidth : '')}
+        className={clsx(styles.buttonContainer, THEME_CLASSES[theme], fullWidth ? styles.fullWidth : '')}
         ref={ref}
         type={type}
         disabled={disabled}
