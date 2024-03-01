@@ -46,7 +46,8 @@
       border-color: #00abc1;
     }
 
-    &.focused {
+    &:focus,
+    &:focus-visible {
       background-color: #4dcfe1;
       border-color: #4dcfe1;
     }
