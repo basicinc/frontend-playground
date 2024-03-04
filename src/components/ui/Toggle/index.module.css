@@ -6,6 +6,7 @@
 
   > .switch {
     position: relative;
+    display: block;
 
     &:has(input:focus) {
       outline: auto;
@@ -23,6 +24,7 @@
     }
 
     > .base {
+      display: block;
       width: 56px;
       height: 32px;
       background-color: #c6c6c6;
