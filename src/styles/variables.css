@@ -17,4 +17,18 @@
   --font-weight-normal: 300;
 
   /* z-index */
+
+  /* spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 36px;
+  --spacing-xxl: 40px;
+  --spacing-3xl: 44px;
+  --spacing-4xl: 48px;
+  --spacing-5xl: 56px;
+  --spacing-6xl: 64px;
+  --spacing-7xl: 104px;
 }
