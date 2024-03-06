@@ -1,9 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.  They are
-# provided by a third-party and are governed by separate terms of service,
-# privacy policy, and support documentation.
-#
-# This workflow will install a prebuilt Ruby version, install dependencies, and
-# run tests and linters.
 name: 'Deploy CI'
 on:
   push:
@@ -14,7 +8,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
 
     permissions:
@@ -63,4 +57,4 @@ jobs:
 
       - name: Deploy
         run: |
-          aws s3 sync ./storybook-static/ --recursive --region ap-northeast-1 build s3://${{ secrets.AWS_S3_BUCKET_DEPLOY_STORYBOOK }} --delete
+          aws s3 sync ./storybook-static s3://${{ secrets.AWS_S3_BUCKET_DEPLOY_STORYBOOK }} --recursive --region ap-northeast-1 --delete
