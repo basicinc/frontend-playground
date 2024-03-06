@@ -1,6 +1,6 @@
 .divider {
   height: 1px;
-  margin: 0;
+  margin: unset;
   background-color: #a5a5a5;
   border: none;
 
