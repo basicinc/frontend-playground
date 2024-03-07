@@ -7,7 +7,7 @@
 - React
 - TypeScript
 - Vite
-- css modules
+- CSS Modules
 - Storybook
 
 ## 準備
