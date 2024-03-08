@@ -12,19 +12,13 @@ type Props = {
   colorType?: IconColorType;
 };
 
-const COLOR_CLASSES: { [key in IconColorType]: string } = {
-  main: styles.svgMain,
-  sub: styles.svgSub,
-  dark: styles.svgDark,
-  light: styles.svgLight,
-} as const;
-
 export const Icon: FC<Props> = ({ name, size, colorType = 'dark' }) => {
   const iconProps: SVGProps<SVGSVGElement> = {
     width: size,
     height: size,
-    className: COLOR_CLASSES[colorType],
+    className: styles.icon,
     'aria-hidden': true,
+    ['data-type' as string]: colorType,
   };
 
   switch (name) {

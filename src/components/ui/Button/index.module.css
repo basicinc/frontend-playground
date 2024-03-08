@@ -18,12 +18,6 @@
     cursor: auto !important;
     background-color: #a5a5a5 !important;
     border-color: #a5a5a5 !important;
-
-    svg {
-      path {
-        fill: var(--color-light) !important;
-      }
-    }
   }
 
   &.full-width {
