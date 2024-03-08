@@ -25,7 +25,6 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
         </label>
         <input
           {...textFieldProps}
-          className={isError ? styles.error : undefined}
           ref={ref}
           id={id}
           required={required}

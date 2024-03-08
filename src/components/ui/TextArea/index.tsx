@@ -21,14 +21,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(({ label, errorMe
 
         {textAreaProps.required && <span className={styles.required}>必須</span>}
       </label>
-      <textarea
-        {...textAreaProps}
-        className={isError ? styles.error : undefined}
-        ref={ref}
-        id={id}
-        aria-invalid={isError}
-        aria-errormessage={errorId}
-      />
+      <textarea {...textAreaProps} ref={ref} id={id} aria-invalid={isError} aria-errormessage={errorId} />
 
       {isError && (
         <span className={styles.errorText} id={errorId}>
