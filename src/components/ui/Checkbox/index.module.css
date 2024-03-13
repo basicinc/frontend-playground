@@ -2,7 +2,12 @@
   display: flex;
   gap: 8px;
   align-items: center;
+  padding: 0 4px;
   cursor: pointer;
+
+  &:has(input:focus, input:focus-visible) {
+    outline: auto;
+  }
 
   > input {
     position: absolute;

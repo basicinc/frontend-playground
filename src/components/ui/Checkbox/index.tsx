@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 
 import styles from '@/components/ui/Checkbox/index.module.css';
 import { Icon } from '@/components/ui/Icon';
@@ -25,6 +25,7 @@ const CheckIcon: FC<{ state: State }> = ({ state }) => {
 };
 
 export const Checkbox = forwardRef<HTMLInputElement, Props>(({ label, indeterminate, isError, ...inputProps }, ref) => {
+  const id = useId();
   const state: State = indeterminate ? 'indeterminate' : inputProps.checked ? 'checked' : 'unchecked';
 
   return (
@@ -32,8 +33,10 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(({ label, indetermin
       {/* TODO: sizeの扱い */}
       <CheckIcon state={state} />
 
-      <input {...inputProps} ref={ref} type='checkbox' aria-invalid={isError} />
-      <span className={styles.label}>{label}</span>
+      <input {...inputProps} ref={ref} type='checkbox' aria-labelledby={id} aria-invalid={isError} />
+      <span id={id} className={styles.label}>
+        {label}
+      </span>
     </label>
   );
 });
