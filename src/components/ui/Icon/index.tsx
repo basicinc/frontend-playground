@@ -1,3 +1,4 @@
+import { CheckboxActive, CheckboxInactive, IndeterminateActive } from '@/components/ui/Icon/generated';
 import SvgChevronRight from '@/components/ui/Icon/generated/ChevronRight';
 import SvgTrash from '@/components/ui/Icon/generated/Trash';
 import SvgUser from '@/components/ui/Icon/generated/User';
@@ -28,5 +29,11 @@ export const Icon: FC<Props> = ({ name, size, colorType = 'dark' }) => {
       return <SvgTrash {...iconProps} />;
     case 'chevron-right':
       return <SvgChevronRight {...iconProps} />;
+    case 'checkbox-active':
+      return <CheckboxActive {...iconProps} />;
+    case 'checkbox-inactive':
+      return <CheckboxInactive {...iconProps} />;
+    case 'indeterminate-active':
+      return <IndeterminateActive {...iconProps} />;
   }
 };
