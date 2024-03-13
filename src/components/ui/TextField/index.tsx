@@ -6,40 +6,30 @@ import type { ComponentProps } from 'react';
 
 type Props = {
   label: string;
-  required?: boolean;
   errorMessage?: string;
 } & ComponentProps<'input'>;
 
-export const TextField = forwardRef<HTMLInputElement, Props>(
-  ({ label, required, errorMessage, ...textFieldProps }, ref) => {
-    const isError = !!errorMessage;
-    const id = useId();
-    const errorId = `${id}-error`;
+export const TextField = forwardRef<HTMLInputElement, Props>(({ label, errorMessage, ...inputProps }, ref) => {
+  const isError = !!errorMessage;
+  const id = useId();
+  const errorId = `${id}-error`;
 
-    return (
-      <div className={styles.textField}>
-        <label htmlFor={id}>
-          {label}
+  return (
+    <div className={styles.textField}>
+      <label htmlFor={id}>
+        {label}
 
-          {required && <span className={styles.required}>必須</span>}
-        </label>
-        <input
-          {...textFieldProps}
-          ref={ref}
-          id={id}
-          required={required}
-          aria-invalid={isError}
-          aria-errormessage={errorId}
-        />
+        {inputProps.required && <span className={styles.required}>必須</span>}
+      </label>
+      <input {...inputProps} ref={ref} id={id} aria-invalid={isError} aria-errormessage={errorId} />
 
-        {isError && (
-          <span className={styles.errorText} id={errorId}>
-            {errorMessage}
-          </span>
-        )}
-      </div>
-    );
-  },
-);
+      {isError && (
+        <span className={styles.errorText} id={errorId}>
+          {errorMessage}
+        </span>
+      )}
+    </div>
+  );
+});
 
 TextField.displayName = 'TextField';
