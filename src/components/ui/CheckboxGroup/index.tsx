@@ -39,13 +39,10 @@ export const CheckboxGroup: FC<Props> = ({
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
-      console.log(e.target.value);
-      let newValue: string[];
-      if (e.target.checked) {
-        newValue = value.concat([e.target.value]);
-      } else {
-        newValue = value.filter((value) => value !== e.target.value);
-      }
+      const newValue = e.target.checked
+        ? value.concat([e.target.value])
+        : value.filter((value) => value !== e.target.value);
+
       onChange(newValue);
     },
     [value, onChange],
