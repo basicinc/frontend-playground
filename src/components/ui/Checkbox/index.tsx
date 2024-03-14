@@ -1,4 +1,4 @@
-import { forwardRef, useId } from 'react';
+import { forwardRef, memo, useId } from 'react';
 
 import styles from '@/components/ui/Checkbox/index.module.css';
 import { Icon } from '@/components/ui/Icon';
@@ -24,7 +24,7 @@ const CheckIcon: FC<{ state: State }> = ({ state }) => {
   }
 };
 
-export const Checkbox = forwardRef<HTMLInputElement, Props>(({ label, indeterminate, isError, ...inputProps }, ref) => {
+const _Checkbox = forwardRef<HTMLInputElement, Props>(({ label, indeterminate, isError, ...inputProps }, ref) => {
   const id = useId();
   const state: State = indeterminate ? 'indeterminate' : inputProps.checked ? 'checked' : 'unchecked';
 
@@ -41,4 +41,6 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(({ label, indetermin
   );
 });
 
-Checkbox.displayName = 'Checkbox';
+_Checkbox.displayName = '_Checkbox';
+
+export const Checkbox = memo(_Checkbox);
