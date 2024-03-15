@@ -1,0 +1,43 @@
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  > legend {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    > .required {
+      padding: 4px;
+      color: var(--color-light);
+      background-color: var(--color-red);
+      border-radius: 4px;
+    }
+  }
+
+  > .description {
+    color: #717171;
+  }
+
+  > .group {
+    display: flex;
+    gap: 4px;
+
+    &[data-direction='column'] {
+      flex-direction: column;
+    }
+
+    &[data-direction='row'] {
+      flex-direction: row;
+    }
+  }
+
+  > .error-text {
+    color: var(--color-red);
+  }
+}
