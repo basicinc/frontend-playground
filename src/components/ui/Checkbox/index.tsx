@@ -3,6 +3,7 @@ import { forwardRef, memo, useId } from 'react';
 import styles from '@/components/ui/Checkbox/index.module.css';
 import { Icon } from '@/components/ui/Icon';
 
+import type { IconProps } from '@/components/ui/Icon';
 import type { ComponentProps, FC } from 'react';
 
 type Props = {
@@ -13,15 +14,16 @@ type Props = {
 
 type State = 'indeterminate' | 'unchecked' | 'checked';
 
+const ICON_PROPS: { [key in State]: Omit<IconProps, 'size'> } = {
+  indeterminate: { name: 'indeterminate-active', colorType: 'dark' },
+  unchecked: { name: 'checkbox-inactive', colorType: 'dark' },
+  checked: { name: 'checkbox-active', colorType: 'main' },
+};
+
 const CheckIcon: FC<{ state: State }> = ({ state }) => {
-  switch (state) {
-    case 'indeterminate':
-      return <Icon name='indeterminate-active' size={24} colorType='dark' />;
-    case 'unchecked':
-      return <Icon name='checkbox-inactive' size={24} colorType='dark' />;
-    case 'checked':
-      return <Icon name='checkbox-active' size={24} colorType='main' />;
-  }
+  const iconProps = { ...ICON_PROPS[state], size: 24 };
+
+  return <Icon {...iconProps} />;
 };
 
 const _Checkbox = forwardRef<HTMLInputElement, Props>(({ label, indeterminate, isError, ...inputProps }, ref) => {

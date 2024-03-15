@@ -7,13 +7,13 @@ import styles from '@/components/ui/Icon/index.module.css';
 import type { IconColorType, IconName } from '@/components/ui/Icon/type';
 import type { FC, SVGProps } from 'react';
 
-type Props = {
+export type IconProps = {
   name: IconName;
   size: number;
   colorType?: IconColorType;
 };
 
-export const Icon: FC<Props> = ({ name, size, colorType = 'dark' }) => {
+export const Icon: FC<IconProps> = ({ name, size, colorType = 'dark' }) => {
   const iconProps: SVGProps<SVGSVGElement> = {
     width: size,
     height: size,
