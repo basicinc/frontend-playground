@@ -1,4 +1,10 @@
-import { CheckboxActive, CheckboxInactive, IndeterminateActive } from '@/components/ui/Icon/generated';
+import {
+  CheckboxActive,
+  CheckboxInactive,
+  IndeterminateActive,
+  RadioButtonCheckedFill,
+  RadioButtonFill,
+} from '@/components/ui/Icon/generated';
 import SvgChevronRight from '@/components/ui/Icon/generated/ChevronRight';
 import SvgTrash from '@/components/ui/Icon/generated/Trash';
 import SvgUser from '@/components/ui/Icon/generated/User';
@@ -35,5 +41,9 @@ export const Icon: FC<IconProps> = ({ name, size, colorType = 'dark' }) => {
       return <CheckboxInactive {...iconProps} />;
     case 'indeterminate-active':
       return <IndeterminateActive {...iconProps} />;
+    case 'radio-button-checked-fill':
+      return <RadioButtonCheckedFill {...iconProps} />;
+    case 'radio-button-fill':
+      return <RadioButtonFill {...iconProps} />;
   }
 };
