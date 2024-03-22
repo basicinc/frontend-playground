@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { CheckboxGroup } from '@/components/ui/CheckboxGroup';
+import { CheckboxGroup } from '@/components/groups/CheckboxGroup';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

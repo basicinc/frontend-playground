@@ -1,7 +1,7 @@
 import { useId, type FC, useCallback } from 'react';
 
+import styles from '@/components/groups/CheckboxGroup/index.module.css';
 import { Checkbox } from '@/components/ui/Checkbox';
-import styles from '@/components/ui/CheckboxGroup/index.module.css';
 
 import type { ChangeEvent } from 'react';
 
