@@ -1,7 +1,7 @@
 .icon {
   &[data-type='main'] {
     path {
-      fill: var(--color-main);
+      fill: var(--color-main-600);
     }
   }
 
@@ -26,6 +26,12 @@
   &[data-type='red'] {
     path {
       fill: var(--color-red);
+    }
+  }
+
+  &[data-type='dark-trans'] {
+    path {
+      fill: var(--color-dark-trans-400);
     }
   }
 }
