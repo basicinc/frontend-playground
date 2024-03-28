@@ -7,4 +7,5 @@ export const ICON_NAMES = [
   'indeterminate-active',
   'radio-button-checked-fill',
   'radio-button-fill',
+  'close-circle',
 ] as const;

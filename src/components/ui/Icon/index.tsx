@@ -1,6 +1,7 @@
 import {
   CheckboxActive,
   CheckboxInactive,
+  CloseCircle,
   IndeterminateActive,
   RadioButtonCheckedFill,
   RadioButtonFill,
@@ -45,5 +46,7 @@ export const Icon: FC<IconProps> = ({ name, size, colorType = 'dark' }) => {
       return <RadioButtonCheckedFill {...iconProps} />;
     case 'radio-button-fill':
       return <RadioButtonFill {...iconProps} />;
+    case 'close-circle':
+      return <CloseCircle {...iconProps} />;
   }
 };
