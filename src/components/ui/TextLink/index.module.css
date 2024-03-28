@@ -1,0 +1,21 @@
+.text-link {
+  display: flex;
+  gap: var(--spacing-xxs);
+  align-items: center;
+  color: var(--color-main-600);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-main-600);
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-radius: var(--border-radius-s);
+    outline: solid 2px var(--color-button-focus);
+  }
+
+  &:visited {
+    color: var(--color-main-800);
+  }
+}
